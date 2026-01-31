@@ -1,10 +1,10 @@
 import * as React from "react";
-import Hello from "./hello.jsx";
+import Tervehdys from "./Tervehdys";
 
 function App() {
   return (
     <div>
-      <Hello name="Ville" />
+      <Tervehdys nimi="Chioma" />
     </div>
   );
 }
