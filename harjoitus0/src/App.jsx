@@ -1,5 +1,6 @@
 import * as React from "react";
 import Tervehdys from "./Tervehdys";
+import OpiskelijaTiedot from "./OpiskelijaTiedot";
 
 // Opiskelijan data
 const opiskelija = {
@@ -8,23 +9,11 @@ const opiskelija = {
   kurssi: "Reactin perusteet",
 };
 
-// OpiskelijaTiedot-komponentti
-function OpiskelijaTiedot() {
-  return (
-    <div>
-      <h2>Opiskelijan tiedot</h2>
-      <p>Nimi: {opiskelija.nimi}</p>
-      <p>Ikä: {opiskelija.ika}</p>
-      <p>Kurssi: {opiskelija.kurssi}</p>
-    </div>
-  );
-}
-
 function App() {
   return (
     <div>
       <Tervehdys nimi="Chioma" />
-      <OpiskelijaTiedot />
+      <OpiskelijaTiedot opiskelija={opiskelija} />
     </div>
   );
 }
