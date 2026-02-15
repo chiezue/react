@@ -3,6 +3,8 @@ import Tervehdys from "./Tervehdys";
 import OpiskelijaTiedot from "./OpiskelijaTiedot";
 import Infolista from "./Infolista";
 import Linkkilista from "./Linkkilista";
+import Kayttajakortti from "./Kayttajakortti";
+import Counter from "./Counter"; // uusi kokoava Counter
 
 function App() {
   const opiskelija = {
@@ -20,13 +22,23 @@ function App() {
 
   return (
     <div>
+      {/* Tehtävä 1 */}
       <Tervehdys nimi="Chioma" />
 
+      {/* Tehtävä 2 */}
       <OpiskelijaTiedot opiskelija={opiskelija} />
 
+      {/* Tehtävä 3 */}
       <Infolista taulukko={tiedot} />
 
+      {/* Tehtävä 4 */}
       <Linkkilista lista={linkit} />
+
+      {/* Tehtävä 5 */}
+      <Kayttajakortti nimi="Ville" lista={["React", "JavaScript", "CSS"]} />
+
+      {/* Tehtävä 6 – Counter (uusi, painikkeet omissa komponenteissaan) */}
+      <Counter />
     </div>
   );
 }
