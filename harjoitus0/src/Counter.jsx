@@ -4,7 +4,7 @@ import Kasvatus from "./Kasvatus";
 import Vahennys from "./Vahennys";
 import Nollaus from "./Nollaus";
 import TuplaKasvatus from "./TuplaKasvatus";
-import CountNaytto from "./CountNaytto";
+import CountNaytto from "./Countnaytto";
 
 function Counter() {
   const [count, setCount] = useState(0);
