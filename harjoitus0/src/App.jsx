@@ -8,7 +8,7 @@ import Infolista from "./Infolista";
 import Linkkilista from "./Linkkilista";
 import Kayttajakortti from "./Kayttajakortti";
 import Counter from "./Counter";
-
+import "./index.css";
 function App() {
   const opiskelija = {
     nimi: "Matti Meikäläinen",

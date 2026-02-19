@@ -1,33 +1,27 @@
 import { useState } from "react";
-import AddItemForm from "./Lomake";
+import Form from "./Form";
+import ItemList from "./ItemList";
 
 function ShoppingList() {
-  const [items, setItems] = useState(["kiivi", "banaani", "kaurajuoma"]);
+  const [items, setItems] = useState([]);
 
-  const addItem = (newItem) => {
+  const addItem = (newItemText) => {
+    const newItem = {
+      id: crypto.randomUUID(),
+      text: newItemText,
+    };
+
     setItems([...items, newItem]);
   };
 
-  const removeItem = (indexToRemove) => {
-    setItems(items.filter((_, index) => index !== indexToRemove));
+  const removeItem = (idToRemove) => {
+    setItems(items.filter((item) => item.id !== idToRemove));
   };
 
   return (
     <div>
-      <AddItemForm onAddItem={addItem} />
-
-      {/* 🔵 YKSI SININEN LISTA */}
-      <ul className="list">
-        {items.map((item, index) => (
-          <li
-            key={index}
-            className="list-item"
-            onClick={() => removeItem(index)}
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
+      <Form onAddItem={addItem} />
+      <ItemList items={items} onRemoveItem={removeItem} />
     </div>
   );
 }

@@ -1,18 +1,23 @@
 body {
   font-family: Arial, sans-serif;
   background-color: white;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
   max-width: 500px;
   margin: 0 auto;
+  padding: 20px;
 }
 
+/* Header */
 .header {
   text-align: center;
   margin-bottom: 20px;
 }
 
+/* Ostoslista */
 .list {
   list-style: none;
   padding: 0;
@@ -30,4 +35,36 @@ body {
 
 .list-item:hover {
   background-color: red;
+}
+
+/* Lomake */
+form {
+  margin-bottom: 20px;
+}
+
+form input {
+  padding: 10px;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  margin-right: 10px;
+}
+
+form button {
+  background-color: green;
+  color: white;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  opacity: 0.8;
+}
+hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 2px solid #ddd;
 }
