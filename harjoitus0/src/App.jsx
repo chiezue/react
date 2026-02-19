@@ -1,10 +1,13 @@
 import * as React from "react";
+import Header from "./Header";
+import ShoppingList from "./ShoppingList";
+
 import Tervehdys from "./Tervehdys";
 import OpiskelijaTiedot from "./OpiskelijaTiedot";
 import Infolista from "./Infolista";
 import Linkkilista from "./Linkkilista";
 import Kayttajakortti from "./Kayttajakortti";
-import Counter from "./Counter"; // uusi kokoava Counter
+import Counter from "./Counter";
 
 function App() {
   const opiskelija = {
@@ -21,23 +24,31 @@ function App() {
   ];
 
   return (
-    <div>
-      {/* Tehtävä 1 */}
+    <div className="container">
+      {/* ✅ OSTOSLISTA (AINOA LISTA) */}
+      <Header />
+      <ShoppingList />
+
+      <hr />
+
+      <h1>React-harjoitukset</h1>
+
+      <h2>Tehtävä 1</h2>
       <Tervehdys nimi="Chioma" />
 
-      {/* Tehtävä 2 */}
+      <h2>Tehtävä 2</h2>
       <OpiskelijaTiedot opiskelija={opiskelija} />
 
-      {/* Tehtävä 3 */}
+      <h2>Tehtävä 3</h2>
       <Infolista taulukko={tiedot} />
 
-      {/* Tehtävä 4 */}
+      <h2>Tehtävä 4</h2>
       <Linkkilista lista={linkit} />
 
-      {/* Tehtävä 5 */}
+      <h2>Tehtävä 5</h2>
       <Kayttajakortti nimi="Ville" lista={["React", "JavaScript", "CSS"]} />
 
-      {/* Tehtävä 6 – Counter (uusi, painikkeet omissa komponenteissaan) */}
+      <h2>Tehtävä 6</h2>
       <Counter />
     </div>
   );
