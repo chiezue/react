@@ -1,6 +1,7 @@
 import * as React from "react";
 import Header from "./Header";
 import ShoppingList from "./ShoppingList";
+import PostList from "./PostList";
 
 import Tervehdys from "./Tervehdys";
 import OpiskelijaTiedot from "./OpiskelijaTiedot";
@@ -25,7 +26,6 @@ function App() {
 
   return (
     <div className="container">
-      {/* ✅ OSTOSLISTA (AINOA LISTA) */}
       <Header />
       <ShoppingList />
 
@@ -50,6 +50,9 @@ function App() {
 
       <h2>Tehtävä 6</h2>
       <Counter />
+
+      <h2>Tehtävä 7</h2>
+      <PostList />
     </div>
   );
 }
