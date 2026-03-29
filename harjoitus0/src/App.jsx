@@ -9,7 +9,11 @@ import Infolista from "./Infolista";
 import Linkkilista from "./Linkkilista";
 import Kayttajakortti from "./Kayttajakortti";
 import Counter from "./Counter";
+import KayttajaHaku from "./KayttajaHaku";
+import KayttajaJaPostaukset from "./KayttajaJaPostaukset";
+
 import "./index.css";
+
 function App() {
   const opiskelija = {
     nimi: "Matti Meikäläinen",
@@ -28,31 +32,26 @@ function App() {
     <div className="container">
       <Header />
       <ShoppingList />
-
       <hr />
-
       <h1>React-harjoitukset</h1>
-
       <h2>Tehtävä 1</h2>
       <Tervehdys nimi="Chioma" />
-
       <h2>Tehtävä 2</h2>
       <OpiskelijaTiedot opiskelija={opiskelija} />
-
       <h2>Tehtävä 3</h2>
       <Infolista taulukko={tiedot} />
-
       <h2>Tehtävä 4</h2>
       <Linkkilista lista={linkit} />
-
       <h2>Tehtävä 5</h2>
       <Kayttajakortti nimi="Ville" lista={["React", "JavaScript", "CSS"]} />
-
       <h2>Tehtävä 6</h2>
       <Counter />
-
       <h2>Tehtävä 7</h2>
       <PostList />
+      <h2>Tehtävä 8</h2>
+      <KayttajaHaku />
+      <h2>Tehtävä 9</h2>
+      <KayttajaJaPostaukset />
     </div>
   );
 }
