@@ -1,48 +1,50 @@
-import * as React from "react";
+import { useEffect, useState } from "react";
 
-function PostList() {
-  const [posts, setPosts] = React.useState([]);
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(null);
+function Postaukset() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  React.useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => {
+  useEffect(() => {
+    async function fetchPosts() {
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts",
+        );
+
         if (!response.ok) {
-          throw new Error(`HTTP error ${response.status}`);
+          throw new Error("Datan haku epäonnistui");
         }
-        return response.json();
-      })
-      .then((data) => {
-        const first10 = data.slice(0, 10);
-        setPosts(first10);
-      })
-      .catch((err) => {
-        setError(err.message || "Haku epäonnistui");
-      })
-      .finally(() => {
+
+        const data = await response.json();
+        setPosts(data);
+      } catch (err) {
+        setError(err.message || "Datan haku epäonnistui");
+      } finally {
         setLoading(false);
-      });
+      }
+    }
+
+    fetchPosts();
   }, []);
-
-  if (loading) {
-    return <p>Ladataan postauksia...</p>;
-  }
-
-  if (error) {
-    return <p>Tapahtui virhe: {error}</p>;
-  }
 
   return (
     <div>
-      <h3>10 ensimmäistä postausta (title)</h3>
-      <ol>
-        {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ol>
+      <h2>Postaukset</h2>
+
+      {loading && <p>Ladataan...</p>}
+
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
+      {!loading && !error && (
+        <ul>
+          {posts.slice(0, 10).map((post) => (
+            <li key={post.id}>{post.title}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
 
-export default PostList;
+export default Postaukset;
