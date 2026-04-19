@@ -1,4 +1,6 @@
 import * as React from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 import Header from "./Header";
 import ShoppingList from "./ShoppingList";
 import PostList from "./PostList";
@@ -12,9 +14,14 @@ import Counter from "./Counter";
 import KayttajaHaku from "./KayttajaHaku";
 import KayttajaJaPostaukset from "./KayttajaJaPostaukset";
 
-import "./index.css";
+import ItemList from "./ItemList";
+import ItemDetails from "./ItemDetails";
+import AddItem from "./AddItem";
+import EditItem from "./EditItem";
 
-function App() {
+import "./app.css";
+
+export default function App() {
   const opiskelija = {
     nimi: "Matti Meikäläinen",
     ika: 16,
@@ -29,31 +36,55 @@ function App() {
   ];
 
   return (
-    <div className="container">
-      <Header />
-      <ShoppingList />
-      <hr />
-      <h1>React-harjoitukset</h1>
-      <h2>Tehtävä 1</h2>
-      <Tervehdys nimi="Chioma" />
-      <h2>Tehtävä 2</h2>
-      <OpiskelijaTiedot opiskelija={opiskelija} />
-      <h2>Tehtävä 3</h2>
-      <Infolista taulukko={tiedot} />
-      <h2>Tehtävä 4</h2>
-      <Linkkilista lista={linkit} />
-      <h2>Tehtävä 5</h2>
-      <Kayttajakortti nimi="Ville" lista={["React", "JavaScript", "CSS"]} />
-      <h2>Tehtävä 6</h2>
-      <Counter />
-      <h2>Tehtävä 7</h2>
-      <PostList />
-      <h2>Tehtävä 8</h2>
-      <KayttajaHaku />
-      <h2>Tehtävä 9</h2>
-      <KayttajaJaPostaukset />
-    </div>
+    <BrowserRouter>
+      <div className="container">
+        <nav className="nav">
+          <Link to="/">Etusivu</Link>
+          <Link to="/shopping">Shopping</Link>
+          <Link to="/posts">Posts</Link>
+          <Link to="/counter">Counter</Link>
+          <Link to="/items">REST</Link>
+          <Link to="/items/add">Add</Link>
+        </nav>
+
+        <Header />
+
+        <Routes>
+          {/* 🏠 ETUSIVU */}
+          <Route
+            path="/"
+            element={
+              <div>
+                <h1>React-harjoitukset</h1>
+
+                <ShoppingList />
+                <PostList />
+
+                <Tervehdys nimi="Chioma" />
+                <OpiskelijaTiedot opiskelija={opiskelija} />
+                <Infolista taulukko={tiedot} />
+                <Linkkilista lista={linkit} />
+                <Kayttajakortti nimi="Ville" lista={tiedot} />
+
+                <Counter />
+                <KayttajaHaku />
+                <KayttajaJaPostaukset />
+              </div>
+            }
+          />
+
+          {/* MUUT NÄKYMÄT */}
+          <Route path="/shopping" element={<ShoppingList />} />
+          <Route path="/posts" element={<PostList />} />
+          <Route path="/counter" element={<Counter />} />
+
+          {/* REST CRUD */}
+          <Route path="/items" element={<ItemList />} />
+          <Route path="/items/:id" element={<ItemDetails />} />
+          <Route path="/items/add" element={<AddItem />} />
+          <Route path="/items/edit/:id" element={<EditItem />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
-
-export default App;
