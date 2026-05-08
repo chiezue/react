@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "hinta": 1500,
+    "merkki": "MaxEffect 2000",
+    "suoritin": "Brain 456",
+    "valmistusvuosi": 2005
+  },
+  {
+    "id": 4,
+    "hinta": 25,
+    "merkki": "BigFlop Mark II",
+    "suoritin": "PiiTron 3",
+    "valmistusvuosi": 2010
+  },
+  {
+    "id": 2,
+    "hinta": 15,
+    "merkki": "Cera 2400",
+    "suoritin": "MinPower",
+    "valmistusvuosi": 2015
+  },
+  {
+    "id": 7,
+    "hinta": 25,
+    "merkki": "Päärynä Mark II",
+    "suoritin": "Seleeni II",
+    "valmistusvuosi": 2017
+  },
+  {
+    "id": 6,
+    "hinta": 123,
+    "merkki": "King 3000",
+    "suoritin": "Letni 64",
+    "valmistusvuosi": 2017
+  },
+  {
+    "id": 3,
+    "hinta": 10,
+    "merkki": "Beast II",
+    "suoritin": "PiiTron 3",
+    "valmistusvuosi": 2011
+  }
+]

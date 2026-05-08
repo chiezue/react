@@ -50,7 +50,6 @@ export default function App() {
         <Header />
 
         <Routes>
-          {/* 🏠 ETUSIVU */}
           <Route
             path="/"
             element={
@@ -73,12 +72,10 @@ export default function App() {
             }
           />
 
-          {/* MUUT NÄKYMÄT */}
           <Route path="/shopping" element={<ShoppingList />} />
           <Route path="/posts" element={<PostList />} />
           <Route path="/counter" element={<Counter />} />
 
-          {/* REST CRUD */}
           <Route path="/items" element={<ItemList />} />
           <Route path="/items/:id" element={<ItemDetails />} />
           <Route path="/items/add" element={<AddItem />} />

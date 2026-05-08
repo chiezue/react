@@ -25,4 +25,4 @@ function AddItemForm({ onAddItem }) {
   );
 }
 
-export default AddItemForm; // ✅ OK
+export default AddItemForm;

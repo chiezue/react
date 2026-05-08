@@ -10,7 +10,6 @@ export default function ItemList() {
     try {
       const res = await getAllItems();
 
-      // 🛡️ varmistus ettei kaadu
       if (res && res.data) {
         setItems(res.data);
       } else {
